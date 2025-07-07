@@ -3,94 +3,492 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdul Rahman | Portfolio</title>
+  <title>Abdul Rahman Sahabudeen | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
+    
     body {
+      
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfdfd;
-      color: #333;
+ background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+  background-attachment: fixed;
+  color: #f2f2f2;
+  scroll-behavior: smooth;
+  padding-top: 100px;
     }
-    header, footer {
-      background-color: #111;
-      color: white;
+    header {
+      background-color: #000000;
+      color: rgb(255, 255, 255);
       padding: 1.5rem 0;
       text-align: center;
+      
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
     }
+    footer {
+      background-color: #051735;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+      display: none;
+    }
+    nav a {
+  color: #0ef;
+  font-weight: 500;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  transition: color 0.3s ease;
+}
+nav a:hover,
+nav a:focus {
+  color: #ffffff;
+  text-decoration: wavy;
+}
+
     .project img {
       width: 100%;
       border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
     }
+    .project img:hover {
+      transform: scale(1.03);
+    }
+    .project h5 {
+  color: rgb(255, 255, 255); /* Neon blue or change to your preferred shade */
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+}
+
     .section-title {
-      margin-top: 60px;
-      margin-bottom: 30px;
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: #111;
+  border: 2px solid #0ef;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  color: #0ef;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+ .section-container {
+    background-color: #1c1c1c;
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid #0ef;
+    border-right: 5px solid #0ef;
+    box-shadow: 0 0 10px rgba(0, 238, 255, 0.2);
+    margin-bottom: 50px;
+  }
+    ul li {
+      margin-bottom: 10px;
+    }
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background-color: rgba(0, 238, 255, 0.427);
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      color: #111;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .contact-icons {
+      margin-top: 30px;
       text-align: center;
+    }
+    .contact-icons a {
+      margin: 0 10px;
+      color: #0ef;
+      font-size: 28px;
+      transition: color 0.3s;
+    }
+    .contact-icons a:hover {
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      nav a {
+        display: block;
+        margin: 5px 0;
+      }
+      .section-title {
+        font-size: 2rem;
+        color: #0ef;
+      }
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .project h5 {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header data-aos="fade-down">
-    <h1>Abdul Rahman Sahabudeen</h1>
-    <p>Aspiring Software Engineer | Ex-SDET at HCLTech | Master's in IT at RMIT University | Automation & AI Enthusiast</p>
-    <nav>
-      <a href="#about" class="text-light me-3">About</a>
-      <a href="#projects" class="text-light me-3">Projects</a>
-      <a href="#skills" class="text-light me-3">Skills</a>
-      <a href="#contact" class="text-light">Contact</a>
-    </nav>
+  <div id="preloader">
+    <h2 style="color: rgb(0, 255, 85); font-family: 'Satoshi', sans-serif;">Loading...</h2>
+  </div>
+
+  <header>
+    <h1 style="font-family: 'Satoshi', sans-serif;">ABDUL RAHMAN SAHABUDEEN</h1>
+    <p id="typewriter"></p>
+    <nav class="d-flex justify-content-center flex-wrap mt-3 gap-3">
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Work Experience</a>
+  <a href="#contact">Contact</a>
+</nav>
   </header>
 
   <section id="about" class="container py-5" data-aos="fade-up">
-    <h2 class="section-title">About Me</h2>
-    <p>I’m a postgraduate IT student at RMIT with 2+ years of industry experience as a Software Development Engineer in Test (SDET) at HCLTech. I specialize in test automation, backend development, and exploring cutting-edge technologies such as cloud computing and generative AI. I'm passionate about building robust systems that improve software quality and user satisfaction.</p>
+    <h2 class="section-title">ABOUT</h2>
+    <div class="section-container">
+    <p>Innovation-driven and analytical IT postgraduate student at RMIT University with 2 years of experience
+ as a Software Engineer (SDET) at HCLTech, focused on automation frameworks and financial systems.
+ Proven ability to drive QA efficiency, work with agile teams, and develop scalable backend solutions.
+ Passionate about consulting, AI, and applying technology to create human-centered impact. Actively
+ seeking opportunities to contribute to digital transformation initiatives With a Strong capability in Generative AI, agent-based architectures, and blockchain technologies.
+ Proven ability to build scalable software, optimize test frameworks, and contribute to open-source-style systems with a focus on innovation and reliability.
+  Highly Interested in LLM-powered AI decision systems and backend orchestration using Python/JavaScript.</p></div>
   </section>
 
   <section id="projects" class="container py-5" data-aos="fade-up">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">PROJECTS</h2>
+    <div class="section-container">
     <div class="row g-4">
       <div class="col-md-6 project" data-aos="zoom-in">
-        <img src="https://via.placeholder.com/600x300" alt="IoT Arduino" />
+        <img src="iotImage.jpg" alt="IoT Arduino" />
         <h5 class="mt-2">IoT Project with Arduino</h5>
         <p>Created sensor-based automation systems using Arduino Uno and Universal Development Board. Implemented real-time data handling and automation logic.</p>
       </div>
       <div class="col-md-6 project" data-aos="zoom-in">
-        <img src="https://via.placeholder.com/600x300" alt="Employee Management" />
-        <h5 class="mt-2">Employment Management System</h5>
-        <p>Developed a full-stack Java application with CRUD functionality to manage employee data. Included frontend, backend, and database integration using SQL.</p>
+        <img src="SuperEventManagement.png" alt="Super Event Management" />
+        <h5 class="mt-2">Super Event Management System</h5>
+        <p>Developed a full-stack Java application with CRUD functionality to manage Events data. Included frontend, backend, and database integration using SQL.</p>
       </div>
+    </div>
     </div>
   </section>
 
   <section id="skills" class="container py-5" data-aos="fade-up">
-  <h2 class="section-title">Skills & Certifications</h2>
-  <ul>
-    <li><strong>Automation:</strong> Java, Selenium, Geb & Spock, Cucumber, Groovy, Jenkins, Test case scripting, Automation feasibility analysis, Report & script maintenance</li>
-    <li><strong>Front End:</strong> HTML, CSS, JavaScript, Responsive design</li>
-    <li><strong>Back End:</strong> Java, Python, SQL, REST APIs</li>
-    <li><strong>DevOps / Tools:</strong> Jenkins, GitHub, Jira, CI/CD pipelines, AWS</li>
-    <li><strong>AI / Data:</strong> Machine Learning, Data visualization, Generative AI, COVID-19 data analysis</li>
-    <li><strong>Cloud:</strong> Cloud computing fundamentals, AWS deployment</li>
-    <li><strong>Other Technical:</strong> IoT (Arduino Uno), Image processing, IT infrastructure & protocols</li>
-    <li><strong>Soft/Professional Skills:</strong> Agile & Scrum, Team collaboration, Client communication, Report writing, Technical documentation</li>
-  </ul>
+  <h2 class="section-title">SKILLS</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+    <div class="col">
+      <div class="card h-100 bg-dark text-light border-info">
+        <div class="card-body">
+          <h5 class="card-title text-info">Automation</h5>
+          <ul class="list-unstyled">
+            <li>Java</li>
+            <li>Selenium</li>
+            <li>Geb & Spock</li>
+            <li>Cucumber</li>
+            <li>Groovy</li>
+            <li>Jenkins</li>
+            <li>Test case scripting</li>
+            <li>Feasibility analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 bg-dark text-light border-info">
+        <div class="card-body">
+          <h5 class="card-title text-info">Frontend</h5>
+          <ul class="list-unstyled">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 bg-dark text-light border-info">
+        <div class="card-body">
+          <h5 class="card-title text-info">Backend</h5>
+          <ul class="list-unstyled">
+            <li>Java</li>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 bg-dark text-light border-info">
+        <div class="card-body">
+          <h5 class="card-title text-info">DevOps / Tools</h5>
+          <ul class="list-unstyled">
+            <li>Jenkins</li>
+            <li>GitHub</li>
+            <li>Jira</li>
+            <li>CI/CD</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 bg-dark text-light border-info">
+        <div class="card-body">
+          <h5 class="card-title text-info">AI / Data</h5>
+          <ul class="list-unstyled">
+            <li>Machine Learning</li>
+            <li>Data Visualization</li>
+            <li>Generative AI</li>
+            <li>COVID-19 Data Analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 bg-dark text-light border-info">
+        <div class="card-body">
+          <h5 class="card-title text-info">Cloud</h5>
+          <ul class="list-unstyled">
+            <li>AWS</li>
+            <li>Cloud Computing Fundamentals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 bg-dark text-light border-info">
+        <div class="card-body">
+          <h5 class="card-title text-info">Other Technical</h5>
+          <ul class="list-unstyled">
+            <li>IoT (Arduino Uno)</li>
+            <li>Image Processing</li>
+            <li>IT Infrastructure & Protocols</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 bg-dark text-light border-info">
+        <div class="card-body">
+          <h5 class="card-title text-info">Soft Skills</h5>
+          <ul class="list-unstyled">
+            <li>Agile & Scrum</li>
+            <li>Team Collaboration</li>
+            <li>Client Communication</li>
+            <li>Report Writing</li>
+            <li>Technical Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section id="experience" class="container py-5" data-aos="fade-up">
+  <h2 class="section-title">WORK EXPERIENCE</h2>
+    <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-icon"><i class="fas fa-store"></i></div>
+      <div class="timeline-content bg-dark text-light border-info">
+        <span class="badge bg-warning text-dark mb-2">Part-Time</span>
+        <h5 class="text-info">Operations – Sai Shree Foods</h5>
+        <h6 class="text-muted">Feb 2025 – Jun 2025 | Melbourne, Australia</h6>
+         <ul>
+          <li>Managed end-to-end food production operations and ensured inventory accuracy.</li>
+          <li>Maintained hygienic conditions and operational safety per Australian food standards.</li>
+          <li>Operated cottage cheese processing and labeling machinery.</li>
+          <li>Delegated tasks, supported stock rotation, and tracked production metrics.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+      <div class="timeline-content bg-dark text-light border-info">
+        <span class="badge bg-success text-dark mb-2">Full-Time</span>
+        <h5 class="text-info">SDET – HCLTech</h5>
+        <h6 class="text-muted">Aug 2022 – Jul 2024 | Chennai, India</h6>
+        <ul>
+          <li>Worked on automation test scripting using Java for the Western Union project, enhancing QA processes over 2 years.</li>
+          <li>Created and executed test cases using the Geb and Spock framework, improving testing efficiency by 20%.</li>
+          <li>Integrated Jenkins jobs with CI/CD pipelines, reducing deployment time by 30%.</li>
+          <li>Performed test feasibility studies, maintained and analyzed scripts, and prepared detailed reports.</li>
+          <li>Gained hands-on experience in backend development through a 6-month internship.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+      <div class="timeline-content bg-dark text-light border-info">
+        <span class="badge bg-info text-dark mb-2">Tech | Internship</span>
+        <h5 class="text-info">Intern – HCLTech</h5>
+        <h6 class="text-muted">Feb 2022 – Jul 2022 | Chennai, India</h6>
+        <ul>
+          <li>Completed internship focused on backend development and automation fundamentals.</li>
+          <li>Built skills in Java, Python, Maven, SQL, Agile practices, and cloud basics.</li>
+          <li>Worked with virtual machines and developed foundational understanding of DevOps pipelines.</li>
+          <li>Engaged in real-time applications using HTML, CSS, and JavaScript.</li>
+        </ul>
+      </div>
+    </div>
+  
+
+  
 </section>
 
+<style>
+  .timeline {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 30px;
+    border-left: 2px solid #0ef;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .timeline-icon {
+    position: absolute;
+    left: -22px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: #0ef;
+    border-radius: 50%;
+    text-align: center;
+    color: #111;
+    font-size: 10px;
+    padding: 6px;
+  }
+  .timeline-content {
+    padding: 20px;
+    border-radius: 6px;
+    margin-left: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .timeline-content ul {
+    padding-left: 20px;
+  }
+</style>
+<style>
+  .form-label {
+    color: #0ef; /* Blue text for labels */
+    font-weight: 600;
+  }
 
-  <section id="contact" class="container py-5" data-aos="fade-up">
+  .form-control::placeholder {
+    color: #0ef; /* Blue placeholder text */
+    opacity: 0.6;
+  }
+
+  .form-control {
+    color: #0ef; /* Blue input text */
+    background-color: #0f0c29; /* Dark background to match theme */
+    border: 1px solid #0ef;
+  }
+
+  .form-control:focus {
+    border-color: #0ef;
+    box-shadow: 0 0 5px #0ef;
+    background-color: #0f0c29;
+    color: #0ef;
+  }
+</style>
+<section id="contact" class="container py-5" data-aos="fade-up">
     <h2 class="section-title">Contact Me</h2>
-    <p>Email: <a href="mailto:abdulrahmanpecec355@gmail.com">abdulrahmanpecec355@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/abdul-rahman-b0207b225" target="_blank">linkedin.com/in/abdul-rahman</a></p>
-    <p>GitHub: <a href="https://github.com/AbdulRahmanTechProjects" target="_blank">https://github.com/AbdulRahmanTechProjects</a></p>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-outline-info">Send</button>
+    </form>
+    <div class="contact-icons mt-4">
+      <a href="mailto:abdulrahmanpecec355@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/abdul-rahman-b0207b225" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/AbdulRahmanTechProjects" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    </div>
   </section>
 
-  <footer data-aos="fade-up">
+  <footer id="pageFooter">
     <p>&copy; 2025 Abdul Rahman. All rights reserved.</p>
   </footer>
+
+  <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">&#8679;</button>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    // Preloader
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    // Scroll to top button & show footer at bottom
+    window.onscroll = function () {
+      const btn = document.getElementById('scrollTopBtn');
+      const footer = document.getElementById('pageFooter');
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollPos = window.scrollY + window.innerHeight;
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = 'block';
+      } else {
+        btn.style.display = 'none';
+      }
+      if (scrollPos >= scrollHeight - 20) {
+        footer.style.display = 'block';
+      } else {
+        footer.style.display = 'none';
+      }
+    };
+
+    // Typewriter effect
+    const txt = 'Aspiring Software Engineer | Ex-SDET at HCLTech | AI & Automation Enthusiast';
+    let i = 0;
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("typewriter").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, 40);
+      }
+    }
+    window.onload = typeWriter;
   </script>
 </body>
 </html>
